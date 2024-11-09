@@ -1,21 +1,22 @@
 import "./App.css";
-import { Box, createTheme, ThemeProvider } from "@mui/material";
+import { Box, ThemeProvider, Typography } from "@mui/material";
 import { Header } from "./components/Header";
 import { Layout } from "./components/Layout";
-
-const theme = createTheme({})
+import { appTheme } from "./config/theme";
 
 function App() {
-  return <ThemeProvider theme={theme}>
+  return <ThemeProvider theme={appTheme}>
     <Box 
       component="main"
       sx={{
         height: "100vh",
-        backgroundColor: "#fafafa"
+        backgroundColor: (theme) => theme.palette.grey[900],
       }}>
         <Header/>
         <Layout>
-          <h1>Olá mundo</h1>
+          <Typography variant="h1" component="h1">
+            Olá mundo
+          </Typography>
         </Layout>
     </Box>
   </ThemeProvider>;
