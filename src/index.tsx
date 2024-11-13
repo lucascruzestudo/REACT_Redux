@@ -5,9 +5,9 @@ import { store } from "./app/store";
 import reportWebVitals from "./reportWebVitals";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { ListCategory } from "./features/counter/categories/ListCategory";
-import { CreateCategory } from "./features/counter/categories/CreateCategory";
-import { EditCategory } from "./features/counter/categories/EditCategory";
+import { ListCategory } from "./features/categories/ListCategory";
+import { CreateCategory } from "./features/categories/CreateCategory";
+import { EditCategory } from "./features/categories/EditCategory";
 
 const container = document.getElementById("root")!;
 const root = createRoot(container);
@@ -15,15 +15,15 @@ const root = createRoot(container);
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <ListCategory/>,
+    element: <ListCategory />,
   },
   {
     path: "/categories",
-    element: <ListCategory/>,
+    element: <ListCategory />,
   },
   {
     path: "/categories/create",
-    element: <CreateCategory/>,
+    element: <CreateCategory />,
   },
   {
     path: "/categories/edit/:id",
@@ -31,7 +31,7 @@ const router = createBrowserRouter([
   },
   {
     path: "*",
-    element: <div>404</div>
+    element: <div>404</div>,
   },
 ]);
 
